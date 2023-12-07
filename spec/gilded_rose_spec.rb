@@ -17,7 +17,7 @@ RSpec.describe GildedRose do
       expect(items[0].quality).to eq 0
     end
     
-    it "decreses sellin" do
+    it "decreses sell in" do
       items = [Item.new("foo", 0, 0)]
       GildedRose.new(items).update_quality()
       expect(items[0].sell_in).to eq -1

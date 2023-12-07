@@ -9,6 +9,8 @@ Ensure you have RSpec installed
 
     gem install rspec
 
+Run specs
+
 ```
 rspec spec
 ```
