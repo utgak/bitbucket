@@ -60,8 +60,6 @@ class GildedRose
     if item.sell_in < 0
       if item.name.include?("Brie")
         increase_quality(item)
-      elsif item.name.include?("Backstage")
-        item.quality = 0
       elsif item.name.include?("Conjured")
       	decrease_quality(item, 2)
       else

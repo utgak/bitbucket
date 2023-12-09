@@ -22,6 +22,12 @@ RSpec.describe GildedRose do
       GildedRose.new(items).update_quality()
       expect(items[0].sell_in).to eq -1
     end
+
+    it "not increasing quality after 50" do
+      items = [Item.new("Brie", -1, 50)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].quality).to eq 50
+    end
     
     context 'before sell in' do
       it "this increases the quality of the brie by 1" do
