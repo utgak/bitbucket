@@ -34,6 +34,18 @@ RSpec.describe GildedRose do
       GildedRose.new(items).update_quality()
       expect(items[0].quality).to eq 50
     end
+
+    it "not decreasing quality less than 0 when -1" do
+      items = [Item.new("foo", 1, 0)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].quality).to eq 0
+    end
+
+    it "not decreasing quality less than 0 when -2" do
+      items = [Item.new("Conjured", 1, 1)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].quality).to eq 0
+    end
     
     context 'before sell in' do
       it "this increases the quality of the brie by 1" do
