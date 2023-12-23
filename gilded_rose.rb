@@ -69,13 +69,19 @@ class GildedRose
   end
 
   def increase_quality(item, amount = 1)
-    item.quality += amount if item.quality < 50
-    item.quality = 50 if (item.quality + amount) > 50
+    if (item.quality + amount) > 50
+      item.quality = 50
+    elsif item.quality < 50
+      item.quality += amount
+    end
   end
 
   def decrease_quality(item, amount = 1)
-    item.quality -= amount if item.quality > 0
-    item.quality = 0 if (item.quality - amount) < 0
+    if (item.quality - amount) < 0
+      item.quality = 0 
+    elsif item.quality > 0
+      item.quality -= amount 
+    end
   end
 end
 
